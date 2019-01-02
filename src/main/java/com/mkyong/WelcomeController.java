@@ -1,5 +1,6 @@
 package com.mkyong;
 
+import java.util.Date;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -15,7 +16,7 @@ public class WelcomeController {
 
 	@RequestMapping("/")
 	public String welcome(Map<String, Object> model) {
-		model.put("message", this.message);
+		model.put("message", this.message + new Date().toString());
 		return "welcome";
 	}
 
